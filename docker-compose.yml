@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+  c9:
+    image: chattama/c9
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - c9.properties
+    ports:
+      - 7001:80
+    volumes:
+      - home:/home/c9user
+
+volumes:
+    home:
+
